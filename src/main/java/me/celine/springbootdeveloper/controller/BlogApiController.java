@@ -7,10 +7,7 @@ import me.celine.springbootdeveloper.dto.ArticleResponse;
 import me.celine.springbootdeveloper.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,4 +41,13 @@ public class BlogApiController {
                 .body(articles);
     }
 
+    // 글 1개 조회
+    @GetMapping("/api/articles/{id}")
+    // URL 경로에서 값 추출 (URL의 {id}가 findArticle에 쓰임)
+    public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
+        Article article = blogService.findById(id);
+
+        return ResponseEntity.ok()
+                .body(new ArticleResponse(article));
+    }
 }
