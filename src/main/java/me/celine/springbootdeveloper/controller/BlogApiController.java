@@ -3,12 +3,16 @@ package me.celine.springbootdeveloper.controller;
 import lombok.RequiredArgsConstructor;
 import me.celine.springbootdeveloper.domain.Article;
 import me.celine.springbootdeveloper.dto.AddArticleRequest;
+import me.celine.springbootdeveloper.dto.ArticleResponse;
 import me.celine.springbootdeveloper.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController // HTTP Response Body에 객체 데이터를 JSON 형식으로 반환하는 컨트롤러
@@ -16,6 +20,7 @@ public class BlogApiController {
 
     private final BlogService blogService;
 
+    // 글 생성
     // HTTP 메서드가 POST일 때 전달받은 URL과 동일하면 메서드로 매핑
         // 지금의 경우, /api/articles는 addArticle() 메서드에 매핑함
     @PostMapping("/api/articles")
@@ -27,4 +32,16 @@ public class BlogApiController {
         return ResponseEntity.status(HttpStatus.CREATED)    // 201 Created
                 .body(savedArticle);
     }
+
+    // 전체 글들 조회 후 반환
+    @GetMapping("/api/articles")
+    public ResponseEntity<List<ArticleResponse>> findAllArticles() {
+        List<ArticleResponse> articles = blogService.findAll()
+                .stream()
+                .map(ArticleResponse::new)
+                .toList();
+        return ResponseEntity.ok()
+                .body(articles);
+    }
+
 }
