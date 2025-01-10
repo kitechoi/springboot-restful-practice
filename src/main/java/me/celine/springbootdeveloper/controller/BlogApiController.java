@@ -50,4 +50,14 @@ public class BlogApiController {
         return ResponseEntity.ok()
                 .body(new ArticleResponse(article));
     }
+
+    // 글 삭제
+    @DeleteMapping("/api/articles/{id}")
+    public ResponseEntity<Void> deleteArticle(@PathVariable long id) {
+        blogService.delete(id);
+
+        return ResponseEntity.ok()
+                .build();   // 굳이 body에 반환할 내용 없을 때
+    }
+
 }

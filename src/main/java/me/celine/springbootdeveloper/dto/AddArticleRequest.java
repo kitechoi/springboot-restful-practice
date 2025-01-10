@@ -1,6 +1,7 @@
 package me.celine.springbootdeveloper.dto;
 
 // dto는 단순하게 데이터를 옮기기 위해 사용하는 전달자 역할이다
+// 컨트롤러가 POST(생성)할 때 필요하다
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
