@@ -45,7 +45,7 @@ public class BlogApiController {
     // 글 1개 조회
     @GetMapping("/api/articles/{id}")
     // URL 경로에서 값 추출 (URL의 {id}가 findArticle에 쓰임)
-    public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
+    public ResponseEntity<ArticleResponse> findArticle(@PathVariable("id") long id) {
         Article article = blogService.findById(id);
 
         return ResponseEntity.ok()
@@ -54,7 +54,7 @@ public class BlogApiController {
 
     // 글 삭제
     @DeleteMapping("/api/articles/{id}")
-    public ResponseEntity<Void> deleteArticle(@PathVariable long id) {
+    public ResponseEntity<Void> deleteArticle(@PathVariable("id") long id) {
         blogService.delete(id);
 
         return ResponseEntity.ok()
@@ -63,7 +63,7 @@ public class BlogApiController {
 
     // 글 수정
     @PutMapping("/api/articles/{id}")
-    public ResponseEntity<Article> updateArticle(@PathVariable long id, @RequestBody UpdateArticleRequest request) {
+    public ResponseEntity<Article> updateArticle(@PathVariable("id") long id, @RequestBody UpdateArticleRequest request) {
         Article updatedArticle = blogService.update(id, request);
 
         return ResponseEntity.ok()
