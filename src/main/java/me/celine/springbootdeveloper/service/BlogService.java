@@ -3,8 +3,10 @@ package me.celine.springbootdeveloper.service;
 import lombok.RequiredArgsConstructor;
 import me.celine.springbootdeveloper.domain.Article;
 import me.celine.springbootdeveloper.dto.AddArticleRequest;
+import me.celine.springbootdeveloper.dto.UpdateArticleRequest;
 import me.celine.springbootdeveloper.repository.BlogRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,5 +37,15 @@ public class BlogService {
     // 글 삭제
     public void delete(long id) {
         blogRepository.deleteById(id);
+    }
+
+    // 글 수정 <- dto UpdateArticleRequest를 받아서 씀
+    @Transactional  // 매칭한 메서드를 하나의 트랜잭션으로 묶는 역할을 함
+    public Article update(long id, UpdateArticleRequest request) {
+        Article article = blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: "+ id));
+        article.update(request.getTitle(), request.getContent());
+
+        return article;
     }
 }

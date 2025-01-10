@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.celine.springbootdeveloper.domain.Article;
 import me.celine.springbootdeveloper.dto.AddArticleRequest;
 import me.celine.springbootdeveloper.dto.ArticleResponse;
+import me.celine.springbootdeveloper.dto.UpdateArticleRequest;
 import me.celine.springbootdeveloper.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -60,4 +61,12 @@ public class BlogApiController {
                 .build();   // 굳이 body에 반환할 내용 없을 때
     }
 
+    // 글 수정
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<Article> updateArticle(@PathVariable long id, @RequestBody UpdateArticleRequest request) {
+        Article updatedArticle = blogService.update(id, request);
+
+        return ResponseEntity.ok()
+                .body(updatedArticle);
+    }
 }

@@ -3,6 +3,7 @@ package me.celine.springbootdeveloper.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.celine.springbootdeveloper.domain.Article;
 import me.celine.springbootdeveloper.dto.AddArticleRequest;
+import me.celine.springbootdeveloper.dto.UpdateArticleRequest;
 import me.celine.springbootdeveloper.repository.BlogRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -147,5 +148,42 @@ class BlogApiControllerTest {
         //then
         List<Article> articles = blogRepository.findAll();
         assertThat(articles).isEmpty();
+    }
+
+    // 글 수정
+    @DisplayName("updateArticle: 블로그 글 수정에 성공한다.")
+    @Test
+    public void updateArticle() throws Exception {
+
+        //given
+         // 새로운 글 생성
+        final String url = "/api/articles/{id}";
+        final String title = "origin title";
+        final String content = "origin content";
+
+        Article savedArticle = blogRepository.save(Article.builder()
+            .title(title)
+            .content(content)
+            .build());
+
+         // 수정할 내용 적용
+        final String newTitle = "new title";
+        final String newContent = "new content";
+
+        UpdateArticleRequest request = new UpdateArticleRequest(newTitle, newContent);
+
+
+        //when
+        ResultActions result = mockMvc.perform(put(url, savedArticle.getId())
+                .contentType(MediaType.APPLICATION_JSON_VALUE).content(objectMapper.writeValueAsString(request)));
+
+
+        //then
+        result.andExpect(status().isOk());
+
+        Article article = blogRepository.findById(savedArticle.getId()).get();
+
+        assertThat(article.getTitle()).isEqualTo(newTitle);
+        assertThat(article.getContent()).isEqualTo(newContent);
     }
 }
