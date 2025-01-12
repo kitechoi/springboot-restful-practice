@@ -1,0 +1,52 @@
+2025-01-12 19:35:20.366583+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+select a1_0.id,a1_0.content,a1_0.title from article a1_0 [42104-224]
+2025-01-12 19:35:20.415601+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+select a1_0.id,a1_0.content,a1_0.title from article a1_0 [42104-224]
+2025-01-12 19:37:48.547382+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+Select * from ARTICLE [42104-224]
+2025-01-12 19:38:16.752514+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:17.273522+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:17.893885+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:18.154114+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:18.472296+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:18.739444+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:18.937431+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:32.615266+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+select a1_0.id,a1_0.content,a1_0.title from article a1_0 [42104-224]
+2025-01-12 19:38:32.621478+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+select a1_0.id,a1_0.content,a1_0.title from article a1_0 [42104-224]
+2025-01-12 19:38:34.505383+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:34.978564+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:35.191171+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+insert into article (content,title,id) values (?,?,default) [42104-224]
+2025-01-12 19:38:46.173404+09:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICLE" not found (this database is empty); SQL statement:
+SELECT * FROM ARTICLE [42104-224]
+2025-01-12 19:40:49.988600+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2025-01-12 19:42:24.455816+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
