@@ -50,3 +50,11 @@ SELECT * FROM ARTICLE [42104-224]
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
 2025-01-12 19:42:24.455816+09:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2025-01-17 15:44:04.599944+09:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2025-01-17 15:45:56.504634+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2025-01-17 18:49:17.392187+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2025-01-17 20:14:08.231683+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
